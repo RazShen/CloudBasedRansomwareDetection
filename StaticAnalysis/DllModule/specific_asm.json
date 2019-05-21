@@ -1,0 +1,9 @@
+{
+    "_comment": ["These instructions are imported from assembly file of the EXE.",
+            "They are ordered by their danger-potential, for example encryption commands",
+            "are rated as level 5 (most dangerous) class."],
+    "level_5": ["aesenc", "aesenclast", "aesdec", "aesdeclast",
+        "aeskeygenassist", "aesimc", "pclmulqdq"],
+    "level_4": ["cryptography", ""]
+}
+
