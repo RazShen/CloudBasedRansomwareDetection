@@ -3,7 +3,7 @@ import socket                   # Import socket module
 
 def send_file_to_server(filename):
     s = socket.socket()             # Create a socket object
-    host = "172.18.27.48"  #Ip address that the TCPServer  is there
+    host = "172.18.27.117"  #Ip address that the TCPServer  is there
     port = 12312                     # Reserve a port for your service every new transfer wants a new port or you must wait.
     s.connect((host, port))
     f = open(filename, 'rb')

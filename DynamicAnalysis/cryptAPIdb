@@ -1,0 +1,7 @@
+CryptAcquireContextA
+CryptDecrypt
+CryptGenKey
+CryptExportKey
+CryptEncrypt
+crypt
+

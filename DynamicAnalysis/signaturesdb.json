@@ -1,0 +1,168 @@
+{
+  "full_ransomware_related_signature_list": {
+    "signature_1": {
+      "description": "Queries for the computername",
+      "severity": 1
+    },
+    "signature_2": {
+      "description": "Checks if process is being debugged by a debugger",
+      "severity": 1
+    },
+    "signature_3": {
+      "description": "Command line console output was observed",
+      "severity": 1
+    },
+    "signature_4": {
+      "description": "Uses Windows APIs to generate a cryptographic key",
+      "severity": 1
+    },
+    "signature_5": {
+      "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available",
+      "severity": 1
+    },
+    "signature_6": {
+      "description": "The executable uses a known packer",
+      "severity": 1
+    },
+    "signature_7": {
+      "description": "The file contains an unknown PE resource name possibly indicative of a packer",
+      "severity": 1
+    },
+    "signature_9": {
+      "description": "One or more processes crashed",
+      "severity": 1
+    },
+    "signature_10": {
+      "description": "One or more potentially interesting buffers were extracted, these generally contain injected code, configuration data, etc.",
+      "severity": 2
+    },
+    "signature_11": {
+      "description": "Starts servers listening",
+      "severity": 2
+    },
+    "signature_12": {
+      "description": "Allocates read-write-execute memory (usually to unpack itself)",
+      "severity": 2
+    },
+    "signature_13": {
+      "description": "Checks whether any human activity is being performed by constantly checking whether the foreground window changed",
+      "severity": 2
+    },
+    "signature_14": {
+      "description": "A process attempted to delay the analysis task.",
+      "severity": 2
+    },
+    "signature_15": {
+      "description": "Queries the disk size which could be used to detect virtual machine with small fixed size or dynamic allocation",
+      "severity": 2
+    },
+    "signature_16": {
+      "description": "Steals private information from local Internet browsers",
+      "severity": 2
+    },
+    "signature_17": {
+      "description": "Creates a suspicious process",
+      "severity": 2
+    },
+    "signature_18": {
+      "description": "Creates hidden or system file",
+      "severity": 2
+    },
+    "signature_19": {
+      "description": "A process created a hidden window",
+      "severity": 2
+    },
+    "signature_20": {
+      "description": "Searches running processes potentially to identify processes for sandbox evasion, code injection or memory dumping",
+      "severity": 2
+    },
+    "signature_21": {
+      "description": "Changes read-write memory protection to read-execute (probably to avoid detection when setting all RWX flags at the same time)",
+      "severity": 2
+    },
+    "signature_22": {
+      "description": "Checks adapter addresses which can be used to detect virtual network interfaces",
+      "severity": 2
+    },
+    "signature_23": {
+      "description": "The binary likely contains encrypted or compressed data indicative of a packer",
+      "severity": 2
+    },
+    "signature_24": {
+      "description": "Checks for the Locally Unique Identifier on the system for a suspicious privilege",
+      "severity": 2
+    },
+    "signature_25": {
+      "description": "Potentially malicious URLs were found in the process memory dump",
+      "severity": 2
+    },
+    "signature_26": {
+      "description": "Uses Windows utilities for basic Windows functionality",
+      "severity": 2
+    },
+    "signature_27": {
+      "description": "Installs itself for autorun at Windows startup",
+      "severity": 3
+    },
+    "signature_28": {
+      "description": "Modifies boot configuration settings",
+      "severity": 3
+    },
+    "signature_29": {
+      "description": "Found URLs related to Tor in process memory dump (e.g. onion services, Tor2Web, and Ransomware)",
+      "severity": 3
+    },
+    "signature_30": {
+      "description": "Runs bcdedit commands specific to ransomware",
+      "severity": 3
+    },
+    "signature_31": {
+      "description": "Appends a known WannaCry ransomware file extension to files that have been encrypted",
+      "severity": 3
+    },
+    "signature_32": {
+      "description": "Deletes a large number of files from the system indicative of ransomware, wiper malware or system destruction",
+      "severity": 3
+    },
+    "signature_33": {
+      "description": "Writes a potential ransom message to disk",
+      "severity": 3
+    },
+    "signature_34": {
+      "description": "Removes the Shadow Copy to avoid recovery of the system",
+      "severity": 3
+    },
+    "signature_35": {
+      "description": "Uses wbadmin utility to delete backups or configuraton to prevent recovery of the system",
+      "severity": 3
+    },
+    "signature_36": {
+      "description": "Resumed a suspended thread in a remote process potentially indicative of process injection",
+      "severity": 3
+    },
+    "signature_37": {
+      "description": "Uses suspicious command line tools or Windows utilities",
+      "severity": 3
+    },
+    "signature_38": {
+      "description": "Installs Tor on the machine",
+      "severity": 3
+    },
+    "signature_39": {
+      "description": "Drops unknown file mime types indicative of ransomware writing encrypted files back to disk",
+      "severity": 5
+    },
+    "signature_40": {
+      "description": "Performs file moves indicative of a ransomware file encryption process",
+      "severity": 6
+    },
+    "signature_41": {
+      "description": "Appends a new file extension or content to files indicative of a ransomware file encryption process",
+      "severity": 6
+    },
+    "signature_42": {
+      "description": "Creates known ransomware decryption instruction / key file",
+      "severity": 5
+    }
+  }
+}

@@ -1,0 +1,12 @@
+73;API:CryptAcquireContextA
+95;API:CryptAcquireContextW
+99;API:RegEnumKeyExW
+100;API:RegEnumKeyExA
+103;API:CryptExportKey
+125;API:NtDeleteFile
+134;API:RegCloseKey
+189;API:CryptEncrypt
+209;API:CryptCreateHash
+220;API:CryptGenKey
+230;API:RegOpenKeyExA
+231;API:CryptHashData

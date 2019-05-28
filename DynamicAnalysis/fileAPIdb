@@ -1,0 +1,8 @@
+NtClose
+NtOpenFile
+NtQueryDirectoryFile
+NtQueryInformationFile
+NtWriteFile
+NtReadFile
+NtCreateFile
+DeleteFileW
