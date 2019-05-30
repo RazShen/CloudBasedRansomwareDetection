@@ -11,7 +11,7 @@ CRYPT_API = "cryptAPIdb"
 SIGNATURES = "signaturesdb.json"
 VOLUME = 1000
 
-
+# read the db and try to split it
 def read_db(filename):
     try:
         f = open(filename, 'r')
@@ -24,14 +24,14 @@ def read_db(filename):
         print "Error reading or parsing the file " + filename + ". Exiting..."
         exit()
 
-
+# look for pattern in string
 def check_string(my_str, suspected):
     for suspect in suspected:
         if suspect.find(my_str) != -1 or my_str.find(suspect) != -1:
             return True
     return False
 
-
+# get the calls made by the executable
 def load_calls(arr, filename):
     try:
         f = open(filename, 'r')
@@ -42,7 +42,7 @@ def load_calls(arr, filename):
         print "Error reading or parsing the file " + filename + ". Exiting..."
         exit()
 
-
+# grade the executable behaviour
 def grade_behaviour(behaviour_dict):
     try:
         reg_keys = behaviour_dict['summary']['regkey_written']
@@ -69,7 +69,7 @@ def grade_behaviour(behaviour_dict):
                 reg_api[0] += api_calls[group][call]
     return min(min(file_api[0] / 150, 50) + min(reg_api[0] / 3, 25) + min(crypt_api[0] / 100, 15) + min(reg_grade,10), 100)
 
-
+# grade the strings found in the executable
 def grade_strings(strings_arr, db=STRINGS_DB):
     strings_arr = [string.lower(str(x)) for x in strings_arr]
     suspecious_strings_list = read_db(db)
@@ -78,7 +78,7 @@ def grade_strings(strings_arr, db=STRINGS_DB):
     count_suspected = len(suspected)
     return min(100, 3.5 * count_suspected)
 
-
+# get the number of hashed file names in a folder (hex chars repeated 10 times)
 def get_num_of_hashed_files(folder_path):
     l = os.listdir(folder_path)
     c = 0
@@ -90,12 +90,13 @@ def get_num_of_hashed_files(folder_path):
     # print "There are " + str(c) + " items with hash-based file name"
     return c
 
-
+# grate the hashed files
 def grade_hashed_files(path):
     hashed_files = get_num_of_hashed_files(path)
     # 1000 hashed files(which is more the bait) would give 100
     return min(100, hashed_files / 10)
 
+#grade the signatures found by the signature db
 def grade_signatures(report):
     with open(SIGNATURES, 'r') as signatures_json:
         sj = signatures_json.read()

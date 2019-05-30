@@ -1,7 +1,7 @@
 import io
 import json
 
-
+# search for signatures indicating the behavior of the executable (search in signaturesdb.json)
 def calculate_signatures_score_and_get_matched_signatures(signature_fp, report_json):
     with open(signature_fp, 'r') as signatures_json:
         sj = signatures_json.read()

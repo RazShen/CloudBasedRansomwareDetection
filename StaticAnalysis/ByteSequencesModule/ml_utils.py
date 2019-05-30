@@ -51,7 +51,9 @@ def features_vector(files_opcodes, ngram_size, n_grams_file_path):
     return files_features
 
 
-
+'''
+read labels of the csv
+'''
 def read_labels(results_directory):
     file_name_and_label_dict = {}
     for line in csv.reader(open(results_directory + "/trainLabels.csv", "rb"), delimiter=","):
@@ -62,7 +64,9 @@ def read_labels(results_directory):
             file_name_and_label_dict[file_name[:-6]] = 0
     return file_name_and_label_dict
 
-
+'''
+create numpy array of the features and the labels
+'''
 def feature_label_arrays(feature_dictionary, label_dictionary):
     feature_array = []
     label_array = []
@@ -71,7 +75,9 @@ def feature_label_arrays(feature_dictionary, label_dictionary):
         label_array.append(label_dictionary[file_name])
     return numpy.array(feature_array), numpy.array(label_array)
 
-
+'''
+randomaly seperate to train and test by the number of classes
+'''
 def seperate_to_train_and_test(features, labels, test_size= 0.4, num_of_classes = 2):
     test_len = int(len(features)*test_size)
     n= int(test_len/num_of_classes)

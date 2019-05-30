@@ -1,6 +1,7 @@
 import os
 import re
 
+# get the number of hashed file names in a folder (hex chars repeated 10 times)
 def get_num_of_hashed_files(folder_path):
     l = os.listdir(folder_path)
     c = 0

@@ -6,7 +6,7 @@ CUCKOO_DIR = "/home/user/.cuckoo/"
 
 WEIGHT = {'sig': 0.35, 'string': 0.1, 'file': 0.2, 'behave': 0.35}
 
-
+# get the report json of the specific task id
 def retrieve_json(task_id):
     analysis_path = CUCKOO_DIR + "storage/analyses/" + str(task_id)
     json_path = analysis_path + "/reports/report.json"
@@ -16,7 +16,7 @@ def retrieve_json(task_id):
         my_json_report.close()
     return dict
 
-
+# get the grade of the specific test id
 def grade(intel, task_id):
     strings_grade = Gradings.grade_strings(intel['strings'])  #
     behaviour_grade = Gradings.grade_behaviour(intel['behavior'])
@@ -26,7 +26,7 @@ def grade(intel, task_id):
     return int(signatures_grades * WEIGHT['sig'] + files_grade * WEIGHT['file'] + behaviour_grade * WEIGHT[
         'behave'] + strings_grade * WEIGHT['string']), signatures
 
-
+# get the grade of the executable by its id
 def get_grade_by_id(task_id):
     try:
         dict = retrieve_json(task_id)
