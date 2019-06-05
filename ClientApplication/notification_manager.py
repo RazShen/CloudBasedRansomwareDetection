@@ -19,6 +19,6 @@ def notify(file_name,signature_list):
             print(line.replace("<signature_list>", signature_list_to_present), end='')
     url = "present_final.html"
     webbrowser.open_new_tab(url)
-    sleep(15)
+    sleep(15 )
     os.remove("present.html")
     os.remove("present_final.html")

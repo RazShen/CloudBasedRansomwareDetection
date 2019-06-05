@@ -30,7 +30,7 @@ def my_call(func):
     # thread.start_new_thread(threaded, func)
     return 0
 
-
+# investigate an executable in file_path
 def investigate(file_path):
     # Clone our Clean snapshot
     my_call("VBoxManage startvm User1")

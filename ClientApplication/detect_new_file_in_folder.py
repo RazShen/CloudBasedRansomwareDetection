@@ -46,11 +46,12 @@ class Handler(FileSystemEventHandler):
             full_path_event = SEARCH_DIR + "\\" +os.path.basename(event.src_path)
 
             saved_bytes_fname = ml_exe_to_hexbytes.get_hexdump_output(full_path_event)
-            # ml_result = ml_client.send_file_to_server(saved_bytes_fname)
+            ml_result = ml_client.send_file_to_server(saved_bytes_fname)
+            print(ml_result)
             sbx_result, signature_list = sbx_client.send_file_to_server(full_path_event)
-            # signature_list = ["doing1", "doing2", "doing3"]
-            # if ml_result.__contains__("1") and float(sbx_result)*0.01 >= 0.8:
-            if float(sbx_result) * 0.01 >= 0.8:
+            print(signature_list)
+            if ml_result.__contains__("1") and float(sbx_result)*0.01 >= 0.8:
+            # if float(sbx_result) * 0.01 >= 0.8:
                 notification_manager.notify(os.path.basename(event.src_path), signature_list)
 
 

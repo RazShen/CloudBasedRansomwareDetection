@@ -6,8 +6,8 @@ signatures_list = ""
 def send_file_to_server(filename):
     global signatures_list
     s = socket.socket()             # Create a socket object
-    host = "172.18.27.117"  #Ip address that the TCPServer  is there
-    port = 12313                     # Reserve a port for your service every new transfer wants a new port or you must wait.
+    host = "172.18.37.81"  #Ip address that the TCPServer  is there
+    port = 12317                    # Reserve a port for your service every new transfer wants a new port or you must wait.
     s.connect((host, port))
     f = open(filename, 'rb')
     l = f.read(2048)
@@ -28,8 +28,12 @@ def send_file_to_server(filename):
     print("Receiving Sandbox Screenshot...")
     with open("cuckoo_output.jpg", 'wb') as scrnsht:
         while True:
-            data = s.recv(2048)
-            if not data:
+            try:
+                s.settimeout(5.0)
+                data = s.recv(2048)
+                if not data:
+                    break
+            except socket.timeout:
                 break
             scrnsht.write(data)
     print("Finished Receiving Sandbox Screenshot...")

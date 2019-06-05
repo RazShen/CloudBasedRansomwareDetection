@@ -3,7 +3,7 @@ import ml_tagger_from_model
 # cloud based ransomware detection
 port = 12312                    # Reserve a port for your service every new transfer wants a new port or you must wait.
 s = socket.socket()             # Create a socket object
-host = "172.18.27.117"   # Get local machine name
+host = "172.18.26.244"   # Get local machine name
 s.bind((host, port))            # Bind to the port
 s.listen(5)                     # Now wait for client connection.
 print('Server listening....')

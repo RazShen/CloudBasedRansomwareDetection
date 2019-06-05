@@ -7,7 +7,9 @@ import xgboost as xgb
 from time import time
 import numpy as np
 import joblib
-
+'''
+Train the xg_boost model
+'''
 def learn_with_XGBClassifier(train_data, train_lbl, test_examples, test_lbl, lr=0.22,n_esti=40,seed=123):
     train_time = time()
     xg_cl = xgb.XGBClassifier(objective='multi:softmax', num_class= 2, learning_rate=lr,
@@ -24,6 +26,7 @@ def learn_with_XGBClassifier(train_data, train_lbl, test_examples, test_lbl, lr=
 files_path = "real_data"
 opcodes_path = "model_data/opcodes"
 n_grams_file_path = "model_data/all_ngrams"
+# train the model by the labels and features extracted
 file_name_and_list_of_op_codes_dict = opcodes_utils.get_dict_filename_op_codes(files_path, opcodes_path)
 file_name_and_feature_vector_dict = ml_utils.features_vector(file_name_and_list_of_op_codes_dict, 4, n_grams_file_path)
 file_name_and_true_label_dict = ml_utils.read_labels(files_path)
